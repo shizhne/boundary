@@ -1,0 +1,34 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - '!file.inFolder("80_模板")'
+    - 'record_role == "canonical"'
+    - 'type != "moc"'
+    - 'source_paths.isEmpty()'
+    - 'review_status != "deprecated"'
+properties:
+  file.name:
+    displayName: 条目
+  type:
+    displayName: 类型
+  maturity:
+    displayName: 成熟度
+  review_status:
+    displayName: 审核状态
+  source_kind:
+    displayName: 来源等级
+  source_paths:
+    displayName: 来源路径
+  updated:
+    displayName: 更新日期
+views:
+  - type: table
+    name: 缺少来源
+    order:
+      - file.name
+      - type
+      - maturity
+      - review_status
+      - source_kind
+      - source_paths
+      - updated

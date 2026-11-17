@@ -1,0 +1,38 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - '!file.inFolder("80_模板")'
+    - 'review_status == "deprecated"'
+properties:
+  file.name:
+    displayName: 条目
+  type:
+    displayName: 类型
+  maturity:
+    displayName: 原成熟度
+  flags:
+    displayName: 健康标记
+  status_reason:
+    displayName: 废弃原因
+  invalidated_at:
+    displayName: 失效时间
+  invalidated_by:
+    displayName: 失效依据
+  superseded_by:
+    displayName: 替代条目
+  decision_ref:
+    displayName: 决策记录
+views:
+  - type: table
+    name: 已废弃
+    order:
+      - file.name
+      - type
+      - maturity
+      - flags
+      - status_reason
+      - invalidated_at
+      - invalidated_by
+      - superseded_by
+      - decision_ref
+

@@ -1,0 +1,37 @@
+filters:
+  and:
+    - file.ext == "md"
+    - '!file.inFolder("80_模板")'
+    - or:
+        - review_status == "candidate"
+        - review_status == "pending_review"
+        - review_status == "needs_redaction"
+properties:
+  file.name:
+    displayName: 条目
+  type:
+    displayName: 类型
+  maturity:
+    displayName: 成熟度
+  review_status:
+    displayName: 审核状态
+  scope:
+    displayName: 适用范围
+  sensitivity:
+    displayName: 敏感级别
+  updated:
+    displayName: 更新日期
+  review_due:
+    displayName: 复核日期
+views:
+  - type: table
+    name: 待审核
+    order:
+      - file.name
+      - type
+      - maturity
+      - review_status
+      - scope
+      - sensitivity
+      - updated
+      - review_due

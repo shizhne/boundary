@@ -1,0 +1,40 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - '!file.inFolder("80_模板")'
+    - or:
+        - 'flags.contains("stale")'
+        - and:
+            - 'review_due != null'
+            - 'review_due <= today()'
+            - 'review_status != "deprecated"'
+properties:
+  file.name:
+    displayName: 条目
+  type:
+    displayName: 类型
+  maturity:
+    displayName: 成熟度
+  review_status:
+    displayName: 审核状态
+  flags:
+    displayName: 健康标记
+  last_verified:
+    displayName: 最近核验
+  review_due:
+    displayName: 复核日期
+  review_owner:
+    displayName: 复核责任人
+views:
+  - type: table
+    name: 陈旧
+    order:
+      - file.name
+      - type
+      - maturity
+      - review_status
+      - flags
+      - last_verified
+      - review_due
+      - review_owner
+

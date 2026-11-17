@@ -1,0 +1,4 @@
+interface:
+  display_name: "引导式工程文献分析"
+  short_description: "按用户关注层级，用专业清晰的中文翻译、拆解并校准工程文献"
+  default_prompt: "使用 $literature-analysis-guided 围绕我的当前问题分析这篇工程文献，用专业但清晰的中文写明具体对象、比较基准、数字口径、证据和边界，并区分论文事实与工程推断。"

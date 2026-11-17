@@ -1,0 +1,41 @@
+filters:
+  and:
+    - file.ext == "md"
+    - '!file.inFolder("80_模板")'
+    - record_role == "canonical"
+    - or:
+        - maturity == "L2"
+        - maturity == "L3"
+    - review_status == "approved"
+    - '!flags.contains("stale")'
+    - '!flags.contains("conflicted")'
+    - '!flags.contains("superseded")'
+    - or:
+        - review_due == null
+        - review_due > today()
+properties:
+  file.name:
+    displayName: 条目
+  type:
+    displayName: 类型
+  maturity:
+    displayName: 成熟度
+  scope:
+    displayName: 适用范围
+  sensitivity:
+    displayName: 敏感级别
+  last_verified:
+    displayName: 最近核验
+  review_due:
+    displayName: 下次复核
+views:
+  - type: table
+    name: 当前有效记录
+    order:
+      - file.name
+      - type
+      - maturity
+      - scope
+      - sensitivity
+      - last_verified
+      - review_due

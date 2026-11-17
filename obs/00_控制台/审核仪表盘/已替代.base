@@ -1,0 +1,34 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - '!file.inFolder("80_模板")'
+    - or:
+        - 'flags.contains("superseded")'
+        - '!superseded_by.isEmpty()'
+properties:
+  file.name:
+    displayName: 旧条目
+  type:
+    displayName: 类型
+  review_status:
+    displayName: 审核状态
+  superseded_by:
+    displayName: 替代条目
+  status_reason:
+    displayName: 替代理由
+  invalidated_at:
+    displayName: 失效时间
+  decision_ref:
+    displayName: 决策记录
+views:
+  - type: table
+    name: 已替代
+    order:
+      - file.name
+      - type
+      - review_status
+      - superseded_by
+      - status_reason
+      - invalidated_at
+      - decision_ref
+

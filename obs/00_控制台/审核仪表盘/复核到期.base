@@ -1,0 +1,33 @@
+filters:
+  and:
+    - file.ext == "md"
+    - '!file.inFolder("80_模板")'
+    - review_due != null
+    - review_due <= today()
+    - review_status != "deprecated"
+properties:
+  file.name:
+    displayName: 条目
+  type:
+    displayName: 类型
+  maturity:
+    displayName: 成熟度
+  review_status:
+    displayName: 审核状态
+  review_due:
+    displayName: 复核日期
+  last_verified:
+    displayName: 最近核验
+  flags:
+    displayName: 健康标记
+views:
+  - type: table
+    name: 复核到期
+    order:
+      - file.name
+      - type
+      - maturity
+      - review_status
+      - review_due
+      - last_verified
+      - flags
