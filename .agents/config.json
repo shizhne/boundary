@@ -1,0 +1,40 @@
+{
+  "project_root": "D:/666/VE25",
+  "engineering_root": "D:/666/VE25/sp",
+  "runtime_root": "D:/666/VE25/.runtime",
+  "active_task_dir": "tasks",
+  "session_log_dir": "sessions",
+  "handoff_dir": "handoffs",
+  "report_dir": "reports",
+  "skill_dir": "skills",
+  "status_values": [
+    "planned",
+    "active",
+    "blocked",
+    "review",
+    "done",
+    "archived"
+  ],
+  "required_task_sections": [
+    "目标",
+    "状态",
+    "背景",
+    "相关文件",
+    "决策记录",
+    "下一步",
+    "验收标准",
+    "会话记录"
+  ],
+  "status_field": "状态",
+  "next_step_section": "下一步",
+  "acceptance_section": "验收标准",
+  "ignored_paths": [
+    "sp/.git",
+    ".runtime",
+    "__pycache__",
+    "node_modules",
+    "slprj",
+    "codegen"
+  ],
+  "max_active_stale_days": 14
+}

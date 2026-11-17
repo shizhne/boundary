@@ -1,0 +1,7 @@
+interface:
+  display_name: "SP 模型设计分析"
+  short_description: "沿实现链路分析 SP 模型，独立判断设计说明质疑并复核修订内容"
+  default_prompt: "使用 $sp-model-design-analysis 分析 SP 模型或处理设计说明问题，并应用判断与复核约定。"
+
+policy:
+  allow_implicit_invocation: true
